@@ -4,6 +4,8 @@ SoftwareSerial mySerial(10, 11); // RX, TX
 
 const int led1 = 3;
 const int led2 = 4;
+const int led3 = 5;
+const int led4 = 6;
 
 String inStr;
 
@@ -35,6 +37,8 @@ class Led : public Device
 
 Led ledOne = Led(led1);
 Led ledTwo = Led(led2);
+Led ledThree = Led(led3);
+Led ledFour = Led(led4);
 
 void setup() {
   Serial.begin(9600);
@@ -46,18 +50,43 @@ void loop() {
     char inChar = (char)mySerial.read();
     inStr += inChar;
     if (inStr.endsWith("#")) {
-      if (!strcmp(inStr.c_str(), "*led one on#")) {
+      if (!strcmp(inStr.c_str(), "*turn on light one#")) {
         ledOne.turnOn();
       }
-      if (!strcmp(inStr.c_str(), "*led one off#")) {
+      if (!strcmp(inStr.c_str(), "*turn off light one#")) {
         ledOne.turnOff();
       }
-      if (!strcmp(inStr.c_str(), "*led two on#")) {
+      if (!strcmp(inStr.c_str(), "*turn on light two#")) {
         ledTwo.turnOn();
       }
-      if (!strcmp(inStr.c_str(), "*led two off#")) {
+      if (!strcmp(inStr.c_str(), "*turn off light two#")) {
         ledTwo.turnOff();
       }
+      if(!strcmp(inStr.c_str(), "*turn on light three#")) {
+        ledThree.turnOn();
+      }
+      if (!strcmp(inStr.c_str(), "*turn off light three#")) {
+        ledThree.turnOff();
+      }
+      if(!strcmp(inStr.c_str(), "*turn off light four#")) {
+        ledFour.turnOn();
+      }
+      if (!strcmp(inStr.c_str(), "*turn off light four#")) {
+        ledFour.turnOff();
+      }
+      if(!strcmp(inStr.c_str(), "*turn on all lights#")) {
+        ledOne.turnOn();
+        ledTwo.turnOn();
+        ledThree.turnOn();
+        ledFour.turnOn();
+      }
+      if(!strcmp(inStr.c_str(), "*turn off all lights#")) {
+        ledOne.turnOff();
+        ledTwo.turnOff();
+        ledThree.turnOff();
+        ledFour.turnOff();
+      }
+      
       inStr = "";
     }
   }
