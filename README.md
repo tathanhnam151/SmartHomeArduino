@@ -29,5 +29,5 @@ This project is a simulation of a voice-controlled light system for a smart home
 - Send the voice commands "*led one on#", "*led one off#", "*led two on#", "*led two off#" from the mobile phone to control the LEDs.
 
 
-##Conclusion
+## Conclusion
 This code provides a simple way to control two LEDs with voice commands and demonstrate inheritance and polymorphism in C++.
