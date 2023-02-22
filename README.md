@@ -26,7 +26,7 @@ This project is a simulation of a voice-controlled light system for a smart home
 ## How to use
 - Upload the code to the Arduino board.
 - Pair the mobile phone with the HC-06 module.
-- Send the voice commands (in Vietnamese, but I setup so the string command that being sent would be something like "*led one on#", "*led one off#", "*led two on#", "*led two off#") from the mobile phone to control the LEDs.
+- Send the voice commands (in Vietnamese, but I modified the application a bit so the string command that being sent would be something like "*led one on#", "*led one off#", "*led two on#", "*led two off#") from the mobile phone to control the LEDs.
 
 
 ## Conclusion
